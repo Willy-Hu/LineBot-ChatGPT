@@ -18,7 +18,7 @@ class ChatGPT:
     def get_response(self):
         response = openai.ChatCompletion.create(
         model = model_id,
-        messages = conversation_string
+        messages = self.prompt.generate_prompt()
         )
         api_usage = response['usage']
         #print(api_usage)
